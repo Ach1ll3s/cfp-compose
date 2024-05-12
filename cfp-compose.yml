@@ -1,0 +1,25 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: mypostgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mysecurepassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./init_sql_scripts/:/docker-entrypoint-initdb.d/
+    networks:
+      - net_backend
+
+networks:
+  net_backend:
+    driver: bridge
+
+volumes:
+  pg_data:
+    driver: local

@@ -1,2 +1,2 @@
 # cfp-compose
-Cash flow plan. Setup for posgresql. 
+Cash flow plan. Setup for postgresql. 

@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS Account (
+    account_id SERIAL PRIMARY KEY,
+    contract_id SERIAL  NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
